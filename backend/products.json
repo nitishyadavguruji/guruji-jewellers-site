@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Gents Gold Bracelet",
+    "category": "Gents Bracelet",
+    "price": 25999,
+    "rating": 4.7,
+    "image": "",
+    "shortDescription": "Heavy gents bracelet with modern pattern.",
+    "description": "22K gold bracelet designed for everyday and party wear, solid links with comfortable fit."
+  },
+  {
+    "id": 2,
+    "name": "Ladies Silver Payal",
+    "category": "Ladies Payal",
+    "price": 3299,
+    "rating": 4.5,
+    "image": "",
+    "shortDescription": "Traditional silver payal with ghungroo.",
+    "description": "Oxidised silver anklet pair, detailed design with fine bells – perfect for festive occasions."
+  },
+  {
+    "id": 1764355067436,
+    "name": "Gents Heavy Gold Bracelet",
+    "category": "Gents Bracelet",
+    "price": 2500,
+    "rating": 4.5,
+    "image": "http://localhost:4000/uploads/1764355067385-BACKGROUND.JPG",
+    "shortDescription": "Premium 22K design – Daily wear, durable finish.",
+    "description": "High-quality Gents Payal made from premium gold-look alloy.\r\nDesigned for daily wear with superior strength and lasting shine.\r\nComfortable fit and elegant look – perfect for casual and festive use.\r\n\r\n• Material: Premium Alloy (Gold Finish)\r\n• Purity Look: 22K Style Gold Tone\r\n• Weight Range: Lightweight, Comfortable\r\n• Ideal For: Gents Daily Wear & Special Occasions\r\n• Durability: Anti-tarnish and skin-safe finish"
+  },
+  {
+    "id": 1764355208938,
+    "name": "Nitish Kumar",
+    "category": "God Pendant",
+    "price": 200000,
+    "rating": 5,
+    "image": "http://localhost:4000/uploads/1764355208934-team_cars_nitish.png",
+    "shortDescription": "Premium 22K design – Daily wear, durable finish.",
+    "description": ""
+  }
+]

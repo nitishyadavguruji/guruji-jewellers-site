@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guru Ji Jewellers - Gold & Silver Ornaments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <!-- SIMPLE LOGO: CIRCLE + GJ -->
+      <div class="logo-mark">
+        <span>GJ</span>
+      </div>
+      <div class="logo-text">
+        <div class="brand-name">Guru Ji Jewellers</div>
+        <div class="brand-tagline">Gold &amp; Silver Ornaments</div>
+      </div>
+    </div>
+    <nav class="nav-right">
+      <a href="#products">Collections</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <!-- CHANGE NUMBER HERE -->
+      <a href="tel:+918218150139" class="btn-outline">
+        <i class="fa-solid fa-phone"></i> Call
+      </a>
+      <a href="https://wa.me/918218150139text=Hi%20Guru%20Ji%20Jewellers%2C%20I%20want%20to%20know%20about%20your%20jewellery."
+         target="_blank" class="btn-outline whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION WITH JEWELLERY BACKGROUND -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Timeless Gold &amp; Silver Ornaments.</h1>
+      <p>
+        Explore rings, bracelets, payals and more – crafted with trust and tradition at
+        <strong>Guru Ji Jewellers</strong>.
+      </p>
+      <a href="#products" class="btn-primary">
+        View Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products">
+      <h2 class="section-title">Our <span>Jewellery Collections</span></h2>
+      <p class="section-text">
+        Browse multiple varieties of rings, bracelets, payals and other jewellery.
+        Click on any item to see details and send enquiry on WhatsApp.
+      </p>
+
+      <div class="filters">
+        <select id="categoryFilter">
+          <option value="all">All Types</option>
+        </select>
+        <select id="sortFilter">
+          <option value="default">Sort by</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating: High to Low</option>
+        </select>
+      </div>
+
+      <div id="productGrid" class="product-grid">
+        <!-- JS se products aayenge -->
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2 class="section-title">Why <span>Guru Ji Jewellers?</span></h2>
+      <p class="section-text">
+        Trusted collection of gold and silver ornaments with transparent pricing,
+        proper weight details and customer-first service.
+      </p>
+      <ul class="points">
+        <li><i class="fa-solid fa-circle-check"></i> Certified gold & silver ornaments</li>
+        <li><i class="fa-solid fa-circle-check"></i> Clear pricing with making charges explained</li>
+        <li><i class="fa-solid fa-circle-check"></i> Custom design options for rings & jewellery sets</li>
+        <li><i class="fa-solid fa-circle-check"></i> Easy WhatsApp enquiry and reservation</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2 class="section-title">Visit &amp; <span>Contact</span></h2>
+      <p class="section-text">
+        Replace the address and numbers below with your real shop details.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>Showroom Address</h3>
+          <p>
+            Guru Ji Jewellers<br>
+            Ashok Nagar, Etawah<br>
+            Uttar Pradesh - 206001
+          </p>
+        </div>
+        <div class="contact-box">
+          <h3>Call &amp; WhatsApp</h3>
+          <p>
+            Phone: <strong>+91-82181 50139</strong><br>
+            WhatsApp: <strong>+91-82181 50139</strong>
+          </p>
+          <p style="font-size:13px;color:#6b7280;"></p>
+        </div>
+        <div class="contact-box">
+          <h3>Quick Enquiry</h3>
+          <p>Click the WhatsApp button below, type product name and send.</p>
+          <a
+            href="https://wa.me/918218150139?text=Hi%20Guru%20Ji%20Jewellers%2C%20I%20want%20to%20enquire%20about%20your%20jewellery."
+            target="_blank"
+            class="btn-primary"
+          >
+            Message on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modalClose" class="modal-close">&times;</span>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="" class="modal-image">
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <p id="modalCategory" class="modal-category"></p>
+          <div class="modal-meta">
+            <span id="modalPrice" class="price-tag"></span>
+            <span id="modalRating" class="rating"></span>
+          </div>
+          <p id="modalDescription" class="modal-description"></p>
+          <button id="modalWhatsappBtn" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP BUTTON (bottom-right) -->
+  <a
+    href="https://wa.me/918218150139?text=Hi%20Guru%20Ji%20Jewellers%2C%20I%20visited%20your%20website."
+    target="_blank"
+    class="whatsapp-float"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

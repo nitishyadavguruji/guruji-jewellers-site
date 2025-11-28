@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guru Ji Jewellers - Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f3f4f6;
+    }
+    .wrapper {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px 18px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(15,23,42,0.12);
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 7px 8px;
+      margin-top: 4px;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      font-size: 13px;
+    }
+    textarea { resize: vertical; }
+    button {
+      margin-top: 14px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+    #msg {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    #msg.success { color: #16a34a; }
+    #msg.error { color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Guru Ji Jewellers – Add Product</h1>
+    <p>Yahan se details + photo daalo, front website me automatic add ho jayega.</p>
+
+    <form id="productForm">
+      <label>Product Name</label>
+      <input type="text" name="name" required placeholder="e.g. Gents Gold Bracelet">
+
+      <label>Category</label>
+      <select name="category" required>
+        <option value="">Select category</option>
+        <option>Gents Bracelet</option>
+        <option>Ladies Bracelet</option>
+        <option>Gents Pendant</option>
+        <option>Ladies Pendant</option>
+        <option>God Pendant</option>
+        <option>Name Pendant</option>
+        <option>Customised Pendant</option>
+        <option>Ladies Payal</option>
+        <option>Gents Payal</option>
+      </select>
+
+      <label>Price (₹)</label>
+      <input type="number" name="price" required placeholder="e.g. 25999">
+
+      <label>Rating (1-5, optional)</label>
+      <input type="number" name="rating" step="0.1" min="1" max="5" placeholder="4.5">
+
+      <label>Short Description (card pe dikhega)</label>
+      <input type="text" name="shortDescription" placeholder="e.g. Heavy design, 22K, daily wear">
+
+      <label>Full Description</label>
+      <textarea name="description" rows="3" placeholder="Weight range, purity, design info etc."></textarea>
+
+      <label>Photo (image file)</label>
+      <input type="file" name="image" accept="image/*">
+
+      <button type="submit" id="submitBtn">Save Product</button>
+      <div id="msg"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("productForm");
+    const msg = document.getElementById("msg");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      msg.textContent = "Saving...";
+      msg.className = "";
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch("http://localhost:4000/api/products", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          msg.textContent = data.message || "Error saving product";
+          msg.className = "error";
+        } else {
+          msg.textContent = "Product saved! Front page refresh karo.";
+          msg.className = "success";
+          form.reset();
+        }
+      } catch (err) {
+        console.error(err);
+        msg.textContent = "Server se connect nahi ho pa ra.";
+        msg.className = "error";
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
