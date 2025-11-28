@@ -1,7 +1,7 @@
 
 const WHATSAPP_NUMBER = "9181218150139"; // change to your number
 
-const API_URL = "http://localhost:4000/api/products";
+const API_URL = "https://guruji-api.onrender.com/api/products";
 
 let products = [];
 
