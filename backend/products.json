@@ -5,38 +5,88 @@
     "category": "Gents Bracelet",
     "price": 25999,
     "rating": 4.7,
-    "image": "https://guruji-api.onrender.com/uploads/gents-gold-bracelet-01.jpg",
-    "shortDescription": "Heavy gents bracelet with modern pattern.",
-    "description": "22K gold bracelet designed for everyday and party wear, solid links with comfortable fit."
+    "image": "https://guruji-api.onrender.com/uploads/gents-bracelet-1.jpg",
+    "shortDescription": "Premium 22K look gents bracelet – daily wear, durable finish.",
+    "description": "High-quality gents bracelet designed for daily wear and special occasions. Made with premium alloy in 22K style gold finish. Comfortable fit, anti-tarnish plating and skin-safe finish. Ideal for gifting as well as regular use."
   },
   {
     "id": 2,
-    "name": "Ladies Silver Payal",
-    "category": "Payal / Anklet",
-    "price": 3299,
-    "rating": 4.5,
-    "image": "https://guruji-api.onrender.com/uploads/ladies-silver-payal-01.jpg",
-    "shortDescription": "Traditional silver payal with ghungroo.",
-    "description": "Oxidised silver anklet pair, detailed design with fine bells – perfect for festive occasions."
+    "name": "Gents Textured Bracelet",
+    "category": "Gents Bracelet",
+    "price": 18999,
+    "rating": 4.6,
+    "image": "https://guruji-api.onrender.com/uploads/gents-bracelet-2.jpg",
+    "shortDescription": "Textured pattern bracelet – stylish look for office & parties.",
+    "description": "Modern textured gents bracelet with strong links and smooth finish. Perfect for office wear as well as evening events. Lightweight design with sturdy clasp, ideal for those who like simple but premium jewellery."
   },
   {
-    "id": 1764355067436,
+    "id": 3,
     "name": "Gents Heavy Gold Bracelet",
     "category": "Gents Bracelet",
-    "price": 2500,
-    "rating": 4.5,
-    "image": "https://guruji-api.onrender.com/uploads/1764355067385-BACKGROUND.JPG",
-    "shortDescription": "Premium 22K design – Daily wear, durable finish.",
-    "description": "High-quality Gents Payal made from premium gold-look alloy.\r\nDesigned for daily wear with superior strength and lasting shine.\r\nComfortable fit and elegant look – perfect for casual and festive use.\r\n\r\n• Material: Premium Alloy (Gold Finish)\r\n• Purity Look: 22K Style Gold Tone\r\n• Weight Range: Lightweight, Comfortable\r\n• Ideal For: Gents Daily Wear & Special Occasions\r\n• Durability: Anti-tarnish and skin-safe finish"
+    "price": 24999,
+    "rating": 4.8,
+    "image": "https://guruji-api.onrender.com/uploads/gents-bracelet-3.jpg",
+    "shortDescription": "Heavy look bracelet – perfect for weddings and functions.",
+    "description": "Royal heavy-look bracelet inspired by traditional designs. Ideal for weddings, festivals and family functions. Strong build, shiny finish and comfortable wear. Can be customised in different weights and sizes on order."
   },
   {
-    "id": 1764355208938,
-    "name": "Nitish Kumar",
+    "id": 4,
+    "name": "God Pendant – Elegant Frame",
     "category": "God Pendant",
-    "price": 200000,
+    "price": 12999,
+    "rating": 4.9,
+    "image": "https://guruji-api.onrender.com/uploads/god-pendant-1.jpg",
+    "shortDescription": "Devotional pendant with elegant border and premium finish.",
+    "description": "Designer God pendant with detailed border and smooth polish. Suitable for daily wear or special occasions. Perfect gift for family members, with option to customise chain length and metal tone as per requirement."
+  },
+  {
+    "id": 5,
+    "name": "God Pendant – Premium Finish",
+    "category": "God Pendant",
+    "price": 14999,
     "rating": 5,
-    "image": "https://guruji-api.onrender.com/uploads/1764355208934-team_cars_nitish.png",
-    "shortDescription": "Premium 22K design – Daily wear, durable finish.",
-    "description": ""
+    "image": "https://guruji-api.onrender.com/uploads/god-pendant-2.jpg",
+    "shortDescription": "Premium devotional pendant – ideal for gifting & daily use.",
+    "description": "Premium God pendant with rich finish and smooth edges. Light on neck but heavy in look. Ideal for gifting on festivals, birthdays and special occasions. Can be paired with gold or silver chains as per choice."
+  },
+  {
+    "id": 6,
+    "name": "Ladies Bracelet – Classic Design",
+    "category": "Ladies Bracelet",
+    "price": 3299,
+    "rating": 4.5,
+    "image": "https://guruji-api.onrender.com/uploads/ladies-bracelet-1.jpg",
+    "shortDescription": "Elegant ladies bracelet – perfect for daily and office wear.",
+    "description": "Simple and elegant ladies bracelet designed for daily wear, office and casual outings. Smooth finishing with delicate links, comfortable to wear for long hours. Can be paired with ethnic as well as western outfits."
+  },
+  {
+    "id": 7,
+    "name": "Ladies Bracelet – Party Wear",
+    "category": "Ladies Bracelet",
+    "price": 3799,
+    "rating": 4.6,
+    "image": "https://guruji-api.onrender.com/uploads/ladies-bracelet-2.jpg",
+    "shortDescription": "Party wear bracelet with shine and detailed pattern.",
+    "description": "Beautiful party wear bracelet with sparkling finish and detailed pattern. Perfect for weddings, receptions and festive occasions. Lightweight yet sturdy, suitable for regular occasional use with long-lasting shine."
+  },
+  {
+    "id": 8,
+    "name": "Custom Name Pendant – Simple Style",
+    "category": "Customised Name Pendant",
+    "price": 5999,
+    "rating": 4.9,
+    "image": "https://guruji-api.onrender.com/uploads/name-pendant-1.jpg",
+    "shortDescription": "Customised name pendant – clean and classy lettering.",
+    "description": "Personalised name pendant with neat lettering style. Can be made in single or double name as per requirement. Ideal gift for birthdays, anniversaries and special memories. Available in different metal finishes and sizes."
+  },
+  {
+    "id": 9,
+    "name": "Custom Name Pendant – Stylish Curve",
+    "category": "Customised Name Pendant",
+    "price": 6499,
+    "rating": 5,
+    "image": "https://guruji-api.onrender.com/uploads/name-pendant-2.jpg",
+    "shortDescription": "Stylish curve design custom name pendant for daily wear.",
+    "description": "Designer custom name pendant with curved styling for a modern look. Comfortable for daily wear with smooth finishing so it doesn’t scratch the skin. Can be ordered with heart / crown / symbol add-ons on request."
   }
 ]
