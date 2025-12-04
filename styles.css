@@ -338,7 +338,7 @@ body {
   color: var(--gold-dark);
 }
 
-/* ABOUT / POLICY */
+/* ABOUT / TRUST */
 .points {
   list-style: none;
   padding-left: 0;
@@ -497,7 +497,7 @@ body {
 
 /* ICON LINKS */
 .icon-link {
-  margin-left: 4px;
+  margin-left: 10px;
   font-size: 20px;
   color: #ffffff;
   display: inline-flex;

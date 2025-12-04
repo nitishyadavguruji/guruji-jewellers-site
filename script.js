@@ -1,5 +1,5 @@
-// 🔹 MAIN CONFIG
-const WHATSAPP_NUMBER = "918218150139"; // ✅ same number everywhere now
+// 🔹 CONFIG
+const WHATSAPP_NUMBER = "918218150139"; // fixed number (same as site)
 const API_URL = "https://guruji-api.onrender.com/api/products";
 
 let products = [];
@@ -37,7 +37,6 @@ const modalAddToEnquiryBtn = document.getElementById("modalAddToEnquiryBtn");
 const enquiryBar = document.getElementById("enquiryBar");
 const enquiryCount = document.getElementById("enquiryCount");
 const viewEnquiryBtn = document.getElementById("viewEnquiryBtn");
-
 const enquiryCartModal = document.getElementById("enquiryCartModal");
 const enquiryModalClose = document.getElementById("enquiryModalClose");
 const enquiryItemsList = document.getElementById("enquiryItemsList");
@@ -68,14 +67,14 @@ async function loadProducts() {
   try {
     const res = await fetch(API_URL);
     products = await res.json();
-
     setupCategories();
     setupPriceSlider();
     renderProducts();
   } catch (err) {
     console.error("Error loading products:", err);
     if (productGrid) {
-      productGrid.innerHTML = "<p>Unable to load products right now. Please try again later.</p>";
+      productGrid.innerHTML =
+        "<p>Unable to load products right now. Please try again later.</p>";
     }
   }
 }
@@ -122,7 +121,7 @@ function setupPriceSlider() {
   maxPriceDisplay.textContent = String(maxVal);
 }
 
-// FILTER + RENDER
+// FILTER + RENDER HELPERS
 function getFilterValues() {
   const categoryValue = categoryFilter ? categoryFilter.value : "all";
   const metalValue = metalFilter ? metalFilter.value.toLowerCase() : "";
@@ -147,7 +146,7 @@ function renderProducts() {
     list = list.filter(p => p.category === categoryValue);
   }
 
-  // Metal filter (expects p.metalType or p.metal to be "Gold" / "Silver")
+  // Metal filter (expects p.metalType or p.metal = Gold/Silver)
   if (metalValue) {
     list = list.filter(p => {
       const metal = (p.metalType || p.metal || "").toString().toLowerCase();
@@ -155,7 +154,7 @@ function renderProducts() {
     });
   }
 
-  // Search (name / category)
+  // Search filter
   if (searchValue) {
     list = list.filter(p => {
       const name = (p.name || "").toLowerCase();
@@ -171,7 +170,7 @@ function renderProducts() {
     return price >= minPrice && price <= maxPrice;
   });
 
-  // Sorting
+  // Sort
   if (sortOption === "price-asc") {
     list.sort((a, b) => (Number(a.price) || 0) - (Number(b.price) || 0));
   } else if (sortOption === "price-desc") {
@@ -193,7 +192,9 @@ function renderProducts() {
 
     const imageSrc = p.image || "https://via.placeholder.com/400x300?text=Jewellery";
 
-    // badge logic: use p.badge OR booleans
+    const safeRating = typeof p.rating === "number" ? p.rating : 4.8;
+
+    // BADGE TEXT
     const badgeText =
       p.badge ||
       (p.isNew && "New") ||
@@ -204,8 +205,6 @@ function renderProducts() {
     let badgeClass = "product-badge";
     if (badgeText === "Offer") badgeClass += " offer";
     if (badgeText === "Customisable") badgeClass += " custom";
-
-    const safeRating = typeof p.rating === "number" ? p.rating : 4.8;
 
     card.innerHTML = `
       ${badgeText ? `<div class="${badgeClass}">${badgeText}</div>` : ""}
@@ -235,7 +234,7 @@ function renderProducts() {
   });
 }
 
-// MODAL
+// MODAL HELPERS
 function setTextOrHide(element, label, value) {
   if (!element) return;
   if (value) {
@@ -254,7 +253,6 @@ function openModal(product) {
   modalImage.src = product.image || "https://via.placeholder.com/400x300?text=Jewellery";
   modalTitle.textContent = product.name || "";
   modalCategory.textContent = product.category || "";
-
   modalPrice.textContent = formatPrice(product.price);
 
   const safeRating = typeof product.rating === "number" ? product.rating : 4.8;
@@ -287,7 +285,7 @@ function openWhatsappForProduct(product) {
   window.open(url, "_blank");
 }
 
-// ENQUIRY CART LOGIC
+// ENQUIRY CART
 function addToEnquiry(product) {
   if (!product) return;
 
@@ -410,7 +408,7 @@ function sendEnquiry() {
   window.open(url, "_blank");
 }
 
-// EVENT LISTENERS
+// EVENTS
 if (categoryFilter) categoryFilter.addEventListener("change", renderProducts);
 if (sortFilter) sortFilter.addEventListener("change", renderProducts);
 if (metalFilter) metalFilter.addEventListener("change", renderProducts);
@@ -448,18 +446,14 @@ if (productModal) {
     if (e.target === productModal) closeModal();
   });
 }
-
 if (modalWhatsappBtn) {
   modalWhatsappBtn.addEventListener("click", () => {
     if (currentProduct) openWhatsappForProduct(currentProduct);
   });
 }
-
 if (modalAddToEnquiryBtn) {
   modalAddToEnquiryBtn.addEventListener("click", () => {
-    if (currentProduct) {
-      addToEnquiry(currentProduct);
-    }
+    if (currentProduct) addToEnquiry(currentProduct);
   });
 }
 
@@ -471,7 +465,6 @@ if (enquiryCartModal) {
     if (e.target === enquiryCartModal) closeEnquiryCart();
   });
 }
-
 if (sendEnquiryBtn) sendEnquiryBtn.addEventListener("click", sendEnquiry);
 
 // START
